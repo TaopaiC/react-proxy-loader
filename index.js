@@ -13,7 +13,7 @@ module.exports.pitch = function(remainingRequest) {
 		'	loadComponent: function(callback) {',
 		'		if(!component) {',
 		'			require.ensure([], function() {',
-		'				component = require(' + loaderUtils.stringifyRequest(this, moduleRequest) + ');',
+		'				component = require(' + loaderUtils.stringifyRequest(this, moduleRequest) + ').default;',
 		'				if(callback) callback(component);',
 		'			}' + (query.name ? ', ' + JSON.stringify(query.name) : '') + ');',
 		'		} else if(callback) callback(component);',
